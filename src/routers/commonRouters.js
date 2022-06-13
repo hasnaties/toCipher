@@ -3,7 +3,17 @@ const User = require('../models/user');
 const router = new express.Router()
 const {auth} = require('../middleware/auth')
 const upload = require('../middleware/multerMiddleware')
-const {welcomeEmail, lastEmail} = require('../emails/postmark')
+const {welcomeEmail, lastEmail} = require('../emails/postmark');
+const { route } = require('express/lib/application');
+
+
+router.get('/', async (req, res) => {
+    res.send({
+        Message: "Welcome to the cipher API.",
+        status: "Server is up.",
+        code: 200
+    })
+});
 
 router.post('/users/signup', async (req, res) => {
 
