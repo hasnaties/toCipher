@@ -8,7 +8,7 @@ const { route } = require('express/lib/application');
 
 
 router.get('/', async (req, res) => {
-    res.send({
+    res.json({
         Message: "Welcome to the cipher API.",
         status: "Server is up.",
         code: 200
